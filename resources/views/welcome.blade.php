@@ -83,8 +83,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Change upload aja</a>
-                    <a href="https://laracasts.com">Coba ganti laracast</a>
+                    <a href="https://laravel.com/docs">Document</a>
+                    <a href="https://laracasts.com">Laracast </a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
