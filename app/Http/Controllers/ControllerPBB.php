@@ -291,4 +291,82 @@ return view('users.pbb.dashboardsipasresult')->with(compact('result_pbb_jumlah_p
 
     }
 
+    public function searchtuwebpps(Request $request)
+    {
+        $method = $request->method();
+
+        if ($request->isMethod('get'))
+        {
+            $search = $request->get('search');
+
+        $pbb_jumlah_kelas_pps=DB::connection('mysql5')
+        ->select('SELECT count(DISTINCT z.kelas) juml from						
+        (select s.kode_upbjj As category_UPBJJ, t.kode_mtk,s.idtutor,d.idtutorial, d.kelas						
+        from z_tutorial_detail d						
+        join z_tutorial_pps t on t.idtutorial=d.idtutorial						
+        join m_mata_kuliah m on t.kode_mtk=m.kode_mtk						
+        join z_t_surat_upbjj s on d.idtutorial=s.idtutorial and d.idtutor=s.idtutor and d.masa=s.masa 						
+        and s.status_approval="YA" 						
+        and s.pilihan=d.pilihan						
+        where d.masa=20211 and d.pilihan in (3)						
+        union						
+        select s.kode_upbjj As category_UPBJJ, t.kode_mtk,s.idtutor,d.idtutorial, d.kelas						
+        from z_tutorial_detail d						
+        join z_tutorial_online t on t.idtutorial_online=d.idtutorial						
+        join m_mata_kuliah m on t.kode_mtk=m.kode_mtk						
+        join z_t_surat_upbjj s on d.idtutorial=s.idtutorial and d.idtutor=s.idtutor and d.masa=s.masa 						
+        and s.status_approval="YA" 						
+        and s.pilihan=d.pilihan						
+        where d.masa=20211 and d.pilihan in (4)) as z ;	
+        ');
+        
+        $pbb_jumlah_nim_pps=DB::connection('mysql5')
+        ->select('SELECT count(z.nim) tota from							
+        ((select s.kode_upbjj As category_UPBJJ, t.kode_mtk, d.kelas,tm.nim							
+        from z_tutorial_detail d							
+        join z_tutorial_pps t on t.idtutorial=d.idtutorial							
+        join m_mata_kuliah m on t.kode_mtk=m.kode_mtk							
+        join z_t_surat_upbjj s on d.idtutorial=s.idtutorial and d.idtutor=s.idtutor and d.masa=s.masa 							
+        join z_tutorial_mhs as tm on tm.idtutorial=s.idtutorial and tm.idtutor=s.idtutor and tm.masa=s.masa 							
+        and s.status_approval="YA" 							
+        and s.pilihan=d.pilihan							
+        where d.masa=20211 and d.pilihan in (3))							
+        union							
+        (select s.kode_upbjj As category_UPBJJ, t.kode_mtk, d.kelas,tm.nim							
+        from z_tutorial_detail d							
+        join z_tutorial_online t on t.idtutorial_online=d.idtutorial							
+        join m_mata_kuliah m on t.kode_mtk=m.kode_mtk							
+        join z_t_surat_upbjj s on d.idtutorial=s.idtutorial and d.idtutor=s.idtutor and d.masa=s.masa 							
+        join z_tutorial_mhs as tm on tm.idtutorial=s.idtutorial and tm.idtutor=s.idtutor and tm.masa=s.masa 							
+        and s.status_approval="YA"							
+        and s.pilihan=d.pilihan							
+        where d.masa=20211 and d.pilihan in (4) ))as z	
+        ');
+
+        $pbb_jumlah_mtk_pps=DB::connection('mysql5')
+        ->select('SELECT count(distinct z.kode_mtk) totall from									
+        ((select s.kode_upbjj As category_UPBJJ, t.kode_mtk, concat(m.nama_mtk," - ",t.kode_mtk,".",d.idtutorial,".",d.kelas) as fullname, concat(t.kode_mtk,".",d.idtutorial,".",d.kelas) as shortname									
+        from z_tutorial_detail d									
+        join z_tutorial_pps t on t.idtutorial=d.idtutorial									
+        join m_mata_kuliah m on t.kode_mtk=m.kode_mtk									
+        join z_t_surat_upbjj s on d.idtutorial=s.idtutorial and d.idtutor=s.idtutor and d.masa=s.masa 									
+        and s.status_approval="YA" 									
+        and s.pilihan=d.pilihan									
+        where d.masa=20211 and d.pilihan in (3))									
+        union									
+        (select s.kode_upbjj As category_UPBJJ, t.kode_mtk, concat(m.nama_mtk," - ",t.kode_mtk,".",d.idtutorial,".",d.kelas) as fullname, concat(t.kode_mtk,".",d.idtutorial,".",d.kelas) as shortname									
+        from z_tutorial_detail d									
+        join z_tutorial_online t on t.idtutorial_online=d.idtutorial									
+        join m_mata_kuliah m on t.kode_mtk=m.kode_mtk									
+        join z_t_surat_upbjj s on d.idtutorial=s.idtutorial and d.idtutor=s.idtutor and d.masa=s.masa 									
+        and s.status_approval="YA"									
+        and s.pilihan=d.pilihan									
+        where d.masa=20211 and d.pilihan in (4) ))as z									
+        ');
+
+        return view('users.pbb.dashboardppsresult')->with(compact('pbb_jumlah_kelas_pps','pbb_jumlah_nim_pps','pbb_jumlah_mtk_pps','search'));
+        }
+
+    }
+
 }
