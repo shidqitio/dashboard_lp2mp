@@ -85,13 +85,14 @@ Route::get('/dashboard_lppmp','ControllerDashboard@sek_lppmp');
 Route::get('/dashboard_p2m2','ControllerDashboard@p2m2');
 Route::get('/dashboard_pbb','ControllerDashboard@pbbtuweb');
 Route::get('/dashboard_pbb_sipas','ControllerDashboard@pbbsipas');
+Route::get('/dashboard_sipas_pps','ControllerDashboard@sipaspps');
 Route::get('/dashboard_puslaba','ControllerDashboard@puslaba');
 Route::get('/dashboard_pusjian','ControllerDashboard@pusjian');
 
 //pbb
 Route::get('/pbb/searchtuweb','ControllerPBB@searchtuweb')->name('searchtuweb');
 Route::get('/pbb/searchtuwebsipas','ControllerPBB@searchtuwebsipas')->name('searchtuwebsipas');
-
+Route::get('/pbb/searchtuwebpps','ControllerPBB@searchtuwebpps')->name('searchtuwebpps');
 //end routing 
 
 Route::get('/user', 'UserController@index');

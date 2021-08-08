@@ -421,6 +421,13 @@
                                         Dashboard SIPAS
                                     </a>
                                 </li>
+
+                                <li>
+									<a href="/dashboard_sipas_pps" class="">
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        Dashboard PPS
+                                    </a>
+                                </li>
                                 <!-- <li class="app-sidebar__heading">Menu Utama</li>
 								<li>
                                     <a href="/viewall">

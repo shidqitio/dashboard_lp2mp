@@ -26,6 +26,10 @@ class ControllerDashboard extends Controller
         return view('users.pbb.dashboardsipas');
 
     }
+    public function sipaspps()
+    {
+        return view('users.pbb.dashboardpps');
+    }
 
 
     public function puslaba()
