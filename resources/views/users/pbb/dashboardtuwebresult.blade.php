@@ -15,7 +15,7 @@
                                         <i class="pe-7s-drawer icon-gradient bg-happy-itmeo">
                                         </i>
                                     </div>
-                                    <div>DASHBOARD TUWEB ATPEM
+                                    <div>Jumlah Peserta TuWEB ATPEM {{$search}}
                                         <!-- <div class="page-title-subheading">Tables are the backbone of almost all web applications.</div> -->
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>    
                             </div>
-                        </div>  
+                        </div>            
 
                         <div class="row">
                         <div class="col-lg-6">
@@ -87,15 +87,13 @@
                                 </div>
                             </div>
 
-
-                            <div class="col-lg-12">
-                                <div class="card-header">TUWEB ATPEM {{$search}}</div>
+                        <div class="row">
+                            <div class="col-lg-6">
                                 <div class="main-card mb-3 card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Jumlah Mata Kuliah</h5>
+                                    <div class="card-body"><h5 class="card-title">Jumlah Peserta Matakuliah</h5>
                                         <div class="table-responsive">
                                             <table class="mb-0 table">
-                                                <thead>
+                                            <thead>
                                                     <tr>
                                                     <th>No</th>
                                                     <th>Fakultas</th>
@@ -112,15 +110,44 @@
                                                 @endforeach
                                                 </tr>
                                                 </tbody>
+                                                <br/>
                                             </table>
                                         </div>
                                     </div>
-
-                                    <div class="card-body">
-                                        <h5 class="card-title">Jumlah Peserta NIM</h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body"><h5 class="card-title">Jumlah Kelas</h5>
                                         <div class="table-responsive">
                                             <table class="mb-0 table">
                                                 <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Fakultas</th>
+                                                    <th>Jumlah Kelas</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @php $no = 1; @endphp
+                                                @foreach ($result_pbb_jumlah_kelas_atpem as $pbb_kelas )
+                                                <tr>
+                                                    <th>{{ $no++ }}</th>
+                                                    <td>{{$pbb_kelas->Fakultas}}</td>
+                                                    <td>{{$pbb_kelas->semua_hasil}}</td>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">    
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body"><h5 class="card-title">Jumlah Peserta NIM</h5>
+                                        <div class="table-responsive">
+                                            <table class="mb-0 table">
+                                            <thead>
                                                     <tr>
                                                     <th>No</th>
                                                     <th>Fakultas</th>
@@ -140,9 +167,58 @@
                                             </table>
                                         </div>
                                     </div>
-                                    
                                 </div>
-                            </div>                           
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body"><h5 class="card-title">Jumlah Peserta NIM-MTK</h5>
+                                        <div class="table-responsive">
+                                            <table class="mb-0 table">
+                                                <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Fakultas</th>
+                                                    <th>TuWEB SIPAS</th>
+                                                    <th>TuWEB ATPEM</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                    <td>Table cell</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>   
                 </div>

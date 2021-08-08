@@ -75,7 +75,7 @@
                                         {{ csrf_field() }}
                                                 <div class="form-group col-xl-3">
                                                 <label for="Kode MK">Input Tahun</label>
-                                                <input type="number" class="form-control" name="search" placeholder="20211">
+                                                <input type="number" class="form-control" name="search" placeholder="contoh : 20211">
                                                 <button type="submit" class="btn btn-secondary" name="show">Search</button>
                                                 </div>  
                                                 
