@@ -10,17 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-
-    <style>
-    .modal-backdrop {
-        z-index: -1;
-    }
-
-</style>
     <!--
     =========================================================
     * ArchitectUI HTML Theme Dashboard - v1.0.0
@@ -38,7 +27,7 @@
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
             <div class="app-header__logo">
-                <div class="logo-src"></div>
+                <div class="logo-lppmp"></div>
                 <div class="header__pane ml-auto">
                     <div>
                         <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
@@ -387,7 +376,7 @@
         <div class="app-main">
                 <div class="app-sidebar sidebar-shadow">
                     <div class="app-header__logo">
-                        <div class="logo-src"></div>
+                        <div class="logo-lppmp"></div>
                         <div class="header__pane ml-auto">
                             <div>
                                 <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
@@ -420,13 +409,9 @@
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Dashboards</li>
                                 <li>
-                                    <a href="#" class="mm-active">
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
-                                        Dashboard SIMBA
-                                    </a>
 									<a href="/dashboard_lppmp" class="mm-active">
                                         <i class="metismenu-icon pe-7s-rocket"></i>
-                                        Dashboard Tutor/Tuton
+                                        Dashboard Bahan Ajar
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">Menu Utama</li>
@@ -440,12 +425,6 @@
                                     <a href="/jadwal">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Jadwal Rapat
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="tables-regular.html">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
-                                        Tiras
                                     </a>
                                 </li>
 								<li>
@@ -483,7 +462,7 @@
                                 </li>
                                 <li class="app-sidebar__heading">Tools</li>
                                 <li>
-                                    <a href="dashboard-boxes.html">
+                                    <a href="/user">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         User Privileges
                                     </a>

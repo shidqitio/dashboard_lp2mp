@@ -99,6 +99,20 @@ return [
             'engine' => null,
         ],
 
+        'mysql6' => [
+            'driver' =>  env('DB_CONNECTION_FIFTH'),
+            'host' => env('DB_HOST_FIFTH', 'sldb1.db.ut.ac.id'),
+            'port' => env('DB_PORT_FIFTH', '3306'),
+            'database' => env('DB_DATABASE_FIFTH', 'ut_srs_4g_V1_17'),
+            'username' => env('DB_USERNAME_FIFTH', 'app_lppmp'),
+            'password' => env('DB_PASSWORD_FIFTH', 'Lppmp2021'),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
 
 
         'pgsql' => [

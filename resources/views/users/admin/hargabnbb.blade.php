@@ -6,172 +6,175 @@
 
 
 @section('contain')
-<div class="main-grid">
-<h1>Harga Buku BNBB</h1>
-
-    <div class="form-group col-xl-3">
-        <label for="DowloadSKrektor">SK Rektor BNBB</label>
-        <br />
-        @foreach($harga_bnbb as $i)
-        <a href="/download/bnbb/{{$i->id}}" class="btn btn-success">Download {{$i->skrektor_bnbb}} </a>
-        @endforeach
-    </div>
-
-    <form method="post" action="/harga_buku_bnbb">
-        {{ csrf_field() }}
-
-        <div class="form-group col-xl-3">
-            <label for="Kode MK">Kode Matakuliah</label>
-            <input type="text" class="form-control" name="kode_mk">
-        </div>
-        <div class="form-group col-xl-3">
-            <label for="Edisi">Edisi</label>
-            <input type="Number" class="form-control" name="edisi">
-        </div>
-        <div class="form-group col-xl-3">
-            <label for="Matkul">Nama BNBB</label>
-            <input type="text" class="form-control" name="nama_bnbb">
-        </div>
-        <div class="form-group col-xl-3">
-            <label for="Biaya Cetak">Jumlah Halaman</label>
-            <input type="Number" class="form-control" name="harga_lembar">
-        </div>
-        <div class="form-group col-xl-3">
-            <label for="Biaya Cetak">Penulis</label>
-            <select class="form-control" name="penulis">
-                <option value="guru_besar">Guru Besar</option>
-                <option value="s3">Penulis S3</option>
-                <option value="s2">Penulis S2</option>
-            </select>
-        </div>
-        <div class="form-group col-xl-3">
-            <label for="Sifat">Buku</label>
-            <select class="form-control" name="buku">
-                <option value="akademik">Buku Akademik</option>
-                <option value="non_akademik">Buku Non Akademik</option>
-            </select>
-        </div>
-
-        <div class="form-group col-xl-1">
-            <button type="submit" class="form-control btn btn-success">Submit</button>
-        </div>
-    </form>
-
-    <table class="table table-hover table-bordered table-responsive  tblbnbb">
-        <thead class="thead-dark">
-            <tr>
-            <th>No</th>
-                <th>Kode MK</th>
-                <th>Edisi</th>
-                <th>Nama BNBB</th>
-                <th>Tanggal Input</th>
-                <th>Surat Keterangan</th>
-                <th>Jumlah Lembar</th>
-                @foreach($harga_bnbb as $bnbb)
-                <th>Harga Cetak <br/>Rp.{{$bnbb->biaya_cetak}}</th>
-                <th>Pengembangan Materi</th>
-                <th>Handling <br/> %{{$bnbb->handling}}</th>
-                <th>Desain Layout <br/> %{{$bnbb->desain_layout}}</th>
-                <th>Pengadaan <br/> %{{$bnbb->pengadaan}}</th>
-                <th>Kendali Mutu <br/> %{{$bnbb->kendali_mutu}}</th>
-                <th>Pemeliharaan <br/> %{{$bnbb->pemeliharaan}}</th>
-                <th>Bahan Pendukung <br/> %{{$bnbb->bahan_pendukung}}</th>
-                <th>Penyimpanan <br/> %{{$bnbb->penyimpanan}}</th>
-                <th>Resiko Mutu <br/> %{{$bnbb->resiko_mutu}}</th>
-                <th>Harga Total</th>
-                <th>action</th>
-                @endforeach
-            </tr>
-        <thead>
-        <tbody>
-        @php 
-        $no = 1
-        @endphp
-        @foreach($total_bnbb as $total)
-        <tr>
-            <td>{{$no++}}</td>
-            <td>{{$total->kode_mk}}</td>
-            <td>{{$total->edisi}}</td>
-            <td>{{$total->nama_bnbb}}</td>
-            <td>{{$total->tanggal_input}}</td>
-            <td>{{$total->surat_keterangan}}</td>
-            <td>{{$total->jumlah_lembar}}</td>
-            <td><?php $hasil = $total->biaya_cetak;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->pengembangan_materi;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->handling;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->desain_layout;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->pengadaan;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->kendali_mutu;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->pemeliharaan;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->bahan_pendukung;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->penyimpanan;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->resiko_mutu;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>
-            <td><?php $hasil = $total->harga_total;
-                $number = number_format($hasil, 2, ",", ".");
-                echo $number;
-                ?></td>   
-            <td> <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#destroy_{{$total->id}}">
-                    Hapus
-                </button>
-            </td>
-            <!-- Modal For Delete -->
-            <div class="modal fade" id="destroy_{{$total->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Delete this data - {{$total->nama_bnbb}}
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <a id="delete-btn" href="{{url('/harga_bnbb/destroy', ['id'=>$total->id] ) }}" class="btn btn-danger">Hapus</a>
-                                    </div>
-                                </div>
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">Harga Buku BNBB</div>
+                        <div class="card-body">
+                            <div class="position-relative form-group">
+                                <label for="DowloadSKrektor">SK Rektor BNBB</label>
+                                <br />
+                                @foreach($harga_bnbb as $i)
+                                <a href="/download/bnbb/{{$i->id}}" class="btn btn-success">Download {{$i->skrektor_bnbb}} </a>
+                                @endforeach
                             </div>
+
+                            <form method="post" action="/harga_buku_bnbb">
+                                {{ csrf_field() }}
+                                <div class="position-relative form-group">
+                                    <label for="Kode MK">Kode Matakuliah</label>
+                                    <input type="text" class="form-control" name="kode_mk">
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="Edisi">Edisi</label>
+                                    <input type="Number" class="form-control" name="edisi">
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="Matkul">Nama BNBB</label>
+                                    <input type="text" class="form-control" name="nama_bnbb">
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="Biaya Cetak">Jumlah Halaman</label>
+                                    <input type="Number" class="form-control" name="harga_lembar">
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="Biaya Cetak">Penulis</label>
+                                    <select class="form-control" name="penulis">
+                                        <option value="guru_besar">Guru Besar</option>
+                                        <option value="s3">Penulis S3</option>
+                                        <option value="s2">Penulis S2</option>
+                                    </select>
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="Sifat">Buku</label>
+                                    <select class="form-control" name="buku">
+                                        <option value="akademik">Buku Akademik</option>
+                                        <option value="non_akademik">Buku Non Akademik</option>
+                                    </select>
+                                </div>
+                                <button class="mt-1 btn btn-primary">Submit</button>
+                            </form>
+
+                            <table class="table table-hover table-bordered table-responsive  tblbnbb">
+                                <thead class="thead-dark">
+                                    <tr>
+                                    <th>No</th>
+                                        <th>Kode MK</th>
+                                        <th>Edisi</th>
+                                        <th>Nama BNBB</th>
+                                        <th>Tanggal Input</th>
+                                        <th>Surat Keterangan</th>
+                                        <th>Jumlah Lembar</th>
+                                        @foreach($harga_bnbb as $bnbb)
+                                        <th>Harga Cetak <br/>Rp.{{$bnbb->biaya_cetak}}</th>
+                                        <th>Pengembangan Materi</th>
+                                        <th>Handling <br/> %{{$bnbb->handling}}</th>
+                                        <th>Desain Layout <br/> %{{$bnbb->desain_layout}}</th>
+                                        <th>Pengadaan <br/> %{{$bnbb->pengadaan}}</th>
+                                        <th>Kendali Mutu <br/> %{{$bnbb->kendali_mutu}}</th>
+                                        <th>Pemeliharaan <br/> %{{$bnbb->pemeliharaan}}</th>
+                                        <th>Bahan Pendukung <br/> %{{$bnbb->bahan_pendukung}}</th>
+                                        <th>Penyimpanan <br/> %{{$bnbb->penyimpanan}}</th>
+                                        <th>Resiko Mutu <br/> %{{$bnbb->resiko_mutu}}</th>
+                                        <th>Harga Total</th>
+                                        <th>action</th>
+                                        @endforeach
+                                    </tr>
+                                <thead>
+                                <tbody>
+                                @php 
+                                $no = 1
+                                @endphp
+                                @foreach($total_bnbb as $total)
+                                <tr>
+                                    <td>{{$no++}}</td>
+                                    <td>{{$total->kode_mk}}</td>
+                                    <td>{{$total->edisi}}</td>
+                                    <td>{{$total->nama_bnbb}}</td>
+                                    <td>{{$total->tanggal_input}}</td>
+                                    <td>{{$total->surat_keterangan}}</td>
+                                    <td>{{$total->jumlah_lembar}}</td>
+                                    <td><?php $hasil = $total->biaya_cetak;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->pengembangan_materi;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->handling;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->desain_layout;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->pengadaan;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->kendali_mutu;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->pemeliharaan;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->bahan_pendukung;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->penyimpanan;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->resiko_mutu;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>
+                                    <td><?php $hasil = $total->harga_total;
+                                        $number = number_format($hasil, 2, ",", ".");
+                                        echo $number;
+                                        ?></td>   
+                                    <td> <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#destroy_{{$total->id}}">
+                                            Hapus
+                                        </button>
+                                    </td>
+                                    <!-- Modal For Delete -->
+                                    <div class="modal fade" id="destroy_{{$total->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.65)">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Konfirmasi</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Apakah Anda Yakin Ingin Menghapus Data Ini? - {{$total->nama_bnbb}}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                                    <a id="delete-btn" href="{{url('/harga_bnbb/destroy', ['id'=>$total->id] ) }}" class="btn btn-danger">Hapus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Modal Delete -->
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- End Modal Delete -->
-        </tr>
-        @endforeach
-        </tbody>
-    </table>
-
-
-
+                    </div>
+                </div>
+            </div>
+        <div>
+    <div>
 </div>
 
 

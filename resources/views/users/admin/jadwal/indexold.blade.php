@@ -94,8 +94,8 @@
 								<td>{{$jadwal -> waktu}}</td>
 								<td>{{$jadwal -> status}}</td>
 								<td>
-									<a href="/jadwal/detail/{{$jadwal->id_rapat}}" class="btn btn-secondary" style="margin-bottom: 5px;" data-toggle="modal" data-target="#detail_{{$jadwal->id_rapat}}">Detail</a><br>
-									<a href="/edit/{{$jadwal->id_rapat}}" class="btn btn-primary" style="margin-bottom: 5px;">Edit</a><br>
+									<a href="/jadwal/detail/{{$jadwal->id_rapat}}" class="btn btn-secondary" data-toggle="modal" data-target="#detail_{{$jadwal->id_rapat}}">Detail</a>
+									<a href="/edit/{{$jadwal->id_rapat}}" class="btn btn-primary">Edit</a>
 							
 	<!-- Button trigger modal -->
 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#destroy_{{$jadwal->id_rapat}}">
@@ -103,7 +103,7 @@
   </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="destroy_{{$jadwal->id_rapat}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.65)">
+  <div class="modal fade" id="destroy_{{$jadwal->id_rapat}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 	  <div class="modal-content">
 		<div class="modal-header">
@@ -124,12 +124,12 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="detail_{{$jadwal->id_rapat}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.65)">
+  <div class="modal fade" id="detail_{{$jadwal->id_rapat}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
-	  <div class="modal-content" style="bottom: -42px;">
+	  <div class="modal-content">
 		<div class="modal-header">
 		  <h5 class="modal-title" id="exampleModalLabel">Detail Data</h5>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		  </button>
 		</div>
@@ -218,7 +218,7 @@
 							</div>
 		</div>
 		<div class="modal-footer">
-		  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 		</div>
 	  </div>
 	</div>

@@ -698,10 +698,10 @@ class ControllerAdmin extends Controller
        
         if($deletebac && $deletebacnonut &&  $deletemhsmitra && $deletenonmhsmitra )
         {
-            Alert::Success('Berhasil', 'Data Dihapus');
+            Alert::Success('Berhasil', 'Data berhasil dihapus');
             return back();
         } else {
-            Alert::Error('Gagal', 'Data gagal Dihapus');
+            Alert::Error('Gagal', 'Data gagal dihapus');
             return back();
         }
     }

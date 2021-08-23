@@ -27,7 +27,7 @@
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
             <div class="app-header__logo">
-                <div class="logo-src"></div>
+                <div class="logo-pbb"></div>
                 <div class="header__pane ml-auto">
                     <div>
                         <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
@@ -376,7 +376,7 @@
         <div class="app-main">
                 <div class="app-sidebar sidebar-shadow">
                     <div class="app-header__logo">
-                        <div class="logo-src"></div>
+                        <div class="logo-pbb"></div>
                         <div class="header__pane ml-auto">
                             <div>
                                 <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
@@ -409,21 +409,20 @@
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Dashboards</li>
                                 <li>
-									<a href="/dashboard_pbb" class="">
+									<a href="/dashboard_pbb" class="mm-active">
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         Dashboard ATPEM
                                     </a>
                                 </li>
 
                                 <li>
-									<a href="/dashboard_pbb_sipas" class="">
+									<a href="/dashboard_pbb_sipas" class="mm-active">
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         Dashboard SIPAS
                                     </a>
                                 </li>
-
                                 <li>
-									<a href="/dashboard_sipas_pps" class="">
+									<a href="/dashboard_sipas_pps" class="mm-active">
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         Dashboard PPS
                                     </a>

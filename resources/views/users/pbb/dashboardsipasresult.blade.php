@@ -68,35 +68,36 @@
 
                         <div class="row">
                         <div class="col-lg-6">
-                                <div class="card-header">TUWEB SIPAS</div>
-                                <div class="main-card mb-3 card">
-                                    <div class="card-body">
-                                    <form class="form-inline" method="get" action="{{route('searchtuweb')}}">
-                                        {{ csrf_field() }}
-                                                <div class="form-group col-xl-3">
-                                                <label for="Kode MK">Input Tahun</label>
-                                                <input type="number" class="form-control" name="search" value="{{$search}}">
-                                                <button type="submit" class="btn btn-secondary" name="show">Search</button>
-                                                </div>  
-                                                
-                                        </form>
-                                    </div>
-
-                                    
-                                    </div>
+                            <div class="card-header">Pencarian Jumlah Berdasarkan Tahun</div>
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                <form class="form-inline" method="get" action="{{route('searchtuweb')}}">
+                                    {{ csrf_field() }}
+                                        <div class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group">
+                                            <label for="Kode MK">Input Tahun</label>
+                                        </div>
+                                        <div class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group">
+                                            <input type="number" class="form-control" name="search" value="{{$search}}">
+                                        </div>
+                                            <button class="mt-1 btn btn-primary" name="show">Cari</button>
+                                </form>
                                 </div>
                             </div>
+                            </div>
+                        </div>
 
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Jumlah Peserta NIM</h5>
+            <div class="col-lg-12">
+                <div class="card-header">TUWEB SIPAS {{$search}}</div>
+                    <div class="main-card mb-3 card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                <h5 class="card-title">Jumlah Mata Kuliah</h5>
                                         <div class="table-responsive">
                                             <table class="mb-0 table">
-                                            <thead>
-                                                    <tr>
+                                                <thead>
+                                                <tr>
                                                     <th>No</th>
-                                                    <th>Kode</th>
                                                     <th>Fakultas</th>
                                                     <th>Jumlah</th>
                                                 </tr>
@@ -106,47 +107,20 @@
                                                 @foreach ($result_pbb_jumlah_peserta_nim as $result_peserta_nim)
                                                 <tr>
                                                     <th>{{ $no++ }}</th>
-                                                    <td>{{$result_peserta_nim->kode_fakultas}}</td>
                                                     <td>{{$result_peserta_nim->Fakultas}}</td>
                                                     <td>{{$result_peserta_nim->total}}</td>
                                                 @endforeach
-                                                </tr>
-                                                </tbody>
-                                                <br/>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Jumlah Kelas</h5>
-                                        <div class="table-responsive">
-                                            <table class="mb-0 table">
-                                                <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Fakultas</th>
-                                                    <th>TuWEB ATPEM</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @php $no = 1; @endphp
-                                                @foreach ($result_pbb_kelas_sipas as $pbb_kelas_sipas )
-                                                <tr>
-                                                    <th>{{ $no++ }}</th>
-                                                    <td>{{$pbb_kelas_sipas->Fakultas}}</td>
-                                                    <td>{{$pbb_kelas_sipas->hitung_hasil}}</td>
-                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">    
-                                <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Jumlah Mata Kuliah</h5>
+
+                            <div class="card-body">
+                            <div class="row">
+                            <div class="col-lg-6">   
+                                    <h5 class="card-title">Jumlah Mata Kuliah</h5>
                                         <div class="table-responsive">
                                             <table class="mb-0 table">
                                             <thead>
@@ -171,9 +145,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Jumlah Peserta NIM-MTK</h5>
+
+                            <div class="card-body">
+                            <div class="row">
+                            <div class="col-lg-6"> 
+                                <h5 class="card-title">Jumlah Peserta NIM-MTK</h5>
                                         <div class="table-responsive">
                                             <table class="mb-0 table">
                                                 <thead>

@@ -15,7 +15,7 @@
                                         <i class="pe-7s-drawer icon-gradient bg-happy-itmeo">
                                         </i>
                                     </div>
-                                    <div>DASHBOARD TUWEB SIPAS PPS 
+                                    <div>Jumlah Peserta TuWEB SIPAS dan ATPEM Semester 2021.1
                                         <!-- <div class="page-title-subheading">Tables are the backbone of almost all web applications.</div> -->
                                     </div>
                                 </div>
@@ -68,18 +68,17 @@
 
                         <div class="row">
                         <div class="col-lg-6">
-                                <div class="card-header">Pencarian Jumlah Berdasarkan Tahun</div>
+                                <div class="card-header">TUWEB ATPEM</div>
                                 <div class="main-card mb-3 card">
                                     <div class="card-body">
-                                        <form class="form-inline" method="get" action="{{route('searchtuwebpps')}}">
+                                        <form class="form-inline" method="get" action="{{route('searchtuweb')}}">
                                         {{ csrf_field() }}
-                                            <div class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group">
+                                                <div class="form-group col-xl-3">
                                                 <label for="Kode MK">Input Tahun</label>
-                                            </div>
-                                            <div class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group">
-                                                <input type="number" class="form-control" name="search" placeholder="co: 20211">
-                                            </div>
-                                                <button type="submit" class="btn btn-secondary" name="show">Cari</button>
+                                                <input type="number" class="form-control" name="search" placeholder="20211">
+                                                <button type="submit" class="btn btn-secondary" name="show">Search</button>
+                                                </div>  
+                                                
                                         </form>
                                     </div>
 
@@ -89,7 +88,64 @@
                             </div>
 
 
-    
+                            <div class="col-lg-12">
+                                <div class="card-header">TUWEB ATPEM</div>
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Jumlah Mata Kuliah</h5>
+                                        <div class="table-responsive">
+                                            <table class="mb-0 table">
+                                                <thead>
+                                                    <tr>
+                                                    <th>No</th>
+                                                    <th>Fakultas</th>
+                                                    <th>Jumlah</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @php $no = 1; @endphp
+                                                @foreach ($pbb_jumlah_matkul_tuweb_atpem as $pbb_matkul )
+                                                <tr>
+                                                    <th>{{ $no++ }}</th>
+                                                    <td>{{$pbb_matkul->singkatan}}</td>
+                                                    <td>{{$pbb_matkul->jml_mhs}}</td>
+                                                @endforeach
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Jumlah Peserta NIM</h5>
+                                        <div class="table-responsive">
+                                            <table class="mb-0 table">
+                                                <thead>
+                                                    <tr>
+                                                    <th>No</th>
+                                                    <th>Fakultas</th>
+                                                    <th>Jumlah</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @php $no = 1; @endphp
+                                                @foreach ($pbb_jumlah_peserta_nim_tuweb_atpem as $pbb_peserta )
+                                                <tr>
+                                                    <th>{{ $no++ }}</th>
+                                                    <td>{{$pbb_peserta->singkatan}}</td>
+                                                    <td>{{$pbb_peserta->jml_mhs}}</td>
+                                                @endforeach
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>   
+                </div>
             <script type="text/javascript" src="./assets/scripts/main.js"></script>
 
 @endsection

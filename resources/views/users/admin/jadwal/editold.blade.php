@@ -6,13 +6,8 @@
 
 @section('contain')
 
-<div class="app-main__outer">
-  <div class="app-main__inner">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="main-card mb-3 card">
-                  <div class="card-header">Ubah Jadwal Rapat</div>
-        <div class="card-body">
+<div class="container">
+<h1>Edit Jadwal Rapat </h1>
 
 @if(count($errors)>0)
   <ul>
@@ -116,10 +111,6 @@
 
 </form>
 </div>
-</div>
-          </div>
-      </div>
-  </div></div>
 @endforeach
 
 
