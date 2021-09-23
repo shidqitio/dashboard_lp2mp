@@ -14,7 +14,7 @@
                         <i class="pe-7s-wallet icon-gradient bg-plum-plate">
                         </i>
                     </div>
-                    <div>Rekap Progress DO
+                    <div>Rekap Progress BA
                         <!-- <div class="page-title-subheading">Highly configurable boxes best used for showing numbers in an user friendly way.</div> -->
                     </div>
                 </div>
@@ -22,9 +22,8 @@
         </div>            
         <div class="">
             <div class="row">
-                <!-- <iframe width="100%" height="1000px" src="https://app.powerbi.com/view?r=eyJrIjoiYjE0YmVhY2YtMTA4YS00NjgxLTk1OTAtODE3MzU0MDE3NTQ2IiwidCI6IjUwODkxNmEwLTdiODktNDNhMS1hZjRlLTcyZmUxNWFiYTViOSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe> -->
-                <!-- <iframe width="100%" height="1000px" src="https://app.powerbi.com/reportEmbed?reportId=a416944a-0cf5-42a6-997b-e20468c9d5ab&autoAuth=true&ctid=508916a0-7b89-43a1-af4e-72fe15aba5b9&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWVhc3QtYXNpYS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe> -->
-                <iframe width="100%" height="1000px" src="https://app.powerbi.com/reportEmbed?reportId=7ee77f0d-74cd-491e-a35d-09f2d3eed8a0&autoAuth=true&ctid=508916a0-7b89-43a1-af4e-72fe15aba5b9&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWVhc3QtYXNpYS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+            <iframe width="100%" height="1000px" src="https://app.powerbi.com/view?r=eyJrIjoiMWU5N2M4ZTItYWVhYi00NGY0LTkyZWMtMTZjNzkwODc5YjFiIiwidCI6IjUwODkxNmEwLTdiODktNDNhMS1hZjRlLTcyZmUxNWFiYTViOSIsImMiOjEwfQ%3D%3D&pageName=ReportSection0ea6a783627a93e35f46" frameborder="0" allowFullScreen="true"></iframe>
+                <!-- <iframe width="100%" height="1000px" src="https://app.powerbi.com/reportEmbed?reportId=8043625e-27fd-466c-b5c7-d951e2be3ab9&autoAuth=true&ctid=508916a0-7b89-43a1-af4e-72fe15aba5b9&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWVhc3QtYXNpYS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe> -->
             </div>
         </div>
     </div>

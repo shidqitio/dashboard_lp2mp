@@ -124,7 +124,7 @@ class ControllerBNBB extends Controller
                 case 'akademik': 
                     (int)$buku_hitung = 1000 ;
                     break;
-                case 'non_akademik' :
+                case 'non akademik' :
                     (int)$buku_hitung = 300;
                     break;
             }

@@ -1,7 +1,7 @@
 
 @extends('layouts.admin')
 
-@section('title','tableuser')
+@section('title','User Privileges')
 
 @section('container')
 

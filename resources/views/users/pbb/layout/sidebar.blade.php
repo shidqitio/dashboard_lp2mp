@@ -411,11 +411,11 @@
                                 <li>
 									<a href="/dashboard_pbb" class="mm-active">
                                         <i class="metismenu-icon pe-7s-rocket"></i>
-                                        Dashboard ATPEM
+                                        Dashboard Utama
                                     </a>
                                 </li>
 
-                                <li>
+                                <!-- <li> 
 									<a href="/dashboard_pbb_sipas" class="mm-active">
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         Dashboard SIPAS
@@ -426,7 +426,7 @@
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         Dashboard PPS
                                     </a>
-                                </li>
+                                </li>-->
                                 <!-- <li class="app-sidebar__heading">Menu Utama</li>
 								<li>
                                     <a href="/viewall">
@@ -486,11 +486,11 @@
                                         User Privileges
                                     </a> -->
 									<a href="/admin">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        <i class="metismenu-icon pe-7s-back-2"></i>
                                         Kembali ke Menu Utama
                                     </a>
                                     <a href="{{ url('/layouts/layout/logout')}}">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        <i class="metismenu-icon pe-7s-power"></i>
                                         Logout
                                     </a>
                                 </li>

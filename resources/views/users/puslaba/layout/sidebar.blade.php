@@ -470,11 +470,11 @@
                                 <li class="app-sidebar__heading">Tools</li>
                                 <li>
 									<a href="/admin">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        <i class="metismenu-icon pe-7s-back-2"></i>
                                         Kembali ke Menu Utama
                                     </a>
                                     <a href="{{ url('/layouts/layout/logout')}}">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        <i class="metismenu-icon pe-7s-power"></i>
                                         Logout
                                     </a>
                                 </li>

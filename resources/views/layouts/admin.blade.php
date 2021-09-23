@@ -417,7 +417,7 @@
                                 <li class="app-sidebar__heading">Menu Utama</li>
 								<li>
                                     <a href="/viewall">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        <i class="metismenu-icon pe-7s-date"></i>
                                         Kalender Operasional
                                     </a>
                                 </li>
@@ -429,8 +429,8 @@
                                 </li>
 								<li>
                                     <a href="#">
-                                        <i class="metismenu-icon pe-7s-diamond"></i>
-                                        Harga Bahan Ajar
+                                        <i class="metismenu-icon pe-7s-bookmarks"></i>
+                                        Penjualan Buku
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
                                     <ul>
@@ -460,18 +460,24 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li>
+                                    <a href="https://pemantauan.ut.ac.id/">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Pemantauan
+                                    </a>
+                                </li>
                                 <li class="app-sidebar__heading">Tools</li>
                                 <li>
                                     <a href="/user">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        <i class="metismenu-icon pe-7s-users"></i>
                                         User Privileges
                                     </a>
 									<a href="/admin">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        <i class="metismenu-icon pe-7s-back-2"></i>
                                         Kembali ke Menu Utama
                                     </a>
                                     <a href="{{ url('/layouts/layout/logout')}}">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        <i class="metismenu-icon pe-7s-power"></i>
                                         Logout
                                     </a>
                                 </li>
